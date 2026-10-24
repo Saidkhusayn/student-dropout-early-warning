@@ -28,7 +28,7 @@ This project uses the UCI [Predict Students' Dropout and Academic Success](https
 │   ├── raw/              # original dataset, never modified
 │   └── processed/        # generated files (git-ignored)
 ├── notebooks/            # numbered analysis notebooks
-├── src/dropout/          # reusable code (config, data loading, ...)
+├── src/dropout/          # reusable code: config, data loading, features, plotting
 ├── tests/                # data sanity checks
 ├── results/figures/      # saved plots
 ├── reports/              # write-ups and meeting summaries
@@ -62,8 +62,9 @@ df.shape   # (4424, 37): 36 features + target
 ## Progress
 
 - [x] Project setup, data loading and validation (`01_load_and_check.ipynb`)
-- [ ] Exploratory data analysis (`02_eda.ipynb`)
-- [ ] Trajectory feature engineering
+- [x] Codebook for categorical codes (`data/codebook.csv`)
+- [x] Exploratory data analysis (`02_eda.ipynb`, figures in `results/figures/`)
+- [x] Trajectory feature engineering (`src/dropout/features.py`)
 - [ ] Staged models: enrollment → semester 1 → semester 2
 - [ ] Classical vs. neural model comparison
 - [ ] Still-passing subgroup analysis and feature importance
