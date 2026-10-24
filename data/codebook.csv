@@ -1,0 +1,262 @@
+variable,code,meaning
+marital_status,1,Single
+marital_status,2,Married
+marital_status,3,Widower
+marital_status,4,Divorced
+marital_status,5,Facto union
+marital_status,6,Legally separated
+application_mode,1,1st phase - general contingent
+application_mode,2,Ordinance No. 612/93
+application_mode,5,1st phase - special contingent (Azores Island)
+application_mode,7,Holders of other higher courses
+application_mode,10,Ordinance No. 854-B/99
+application_mode,15,International student (bachelor)
+application_mode,16,1st phase - special contingent (Madeira Island)
+application_mode,17,2nd phase - general contingent
+application_mode,18,3rd phase - general contingent
+application_mode,26,"Ordinance No. 533-A/99, item b2) (Different Plan)"
+application_mode,27,"Ordinance No. 533-A/99, item b3 (Other Institution)"
+application_mode,39,Over 23 years old
+application_mode,42,Transfer
+application_mode,43,Change of course
+application_mode,44,Technological specialization diploma holders
+application_mode,51,Change of institution/course
+application_mode,53,Short cycle diploma holders
+application_mode,57,Change of institution/course (International)
+course,33,Biofuel Production Technologies
+course,171,Animation and Multimedia Design
+course,8014,Social Service (evening attendance)
+course,9003,Agronomy
+course,9070,Communication Design
+course,9085,Veterinary Nursing
+course,9119,Informatics Engineering
+course,9130,Equinculture
+course,9147,Management
+course,9238,Social Service
+course,9254,Tourism
+course,9500,Nursing
+course,9556,Oral Hygiene
+course,9670,Advertising and Marketing Management
+course,9773,Journalism and Communication
+course,9853,Basic Education
+course,9991,Management (evening attendance)
+previous_qualification,1,Secondary education
+previous_qualification,2,Higher education - bachelor's degree
+previous_qualification,3,Higher education - degree
+previous_qualification,4,Higher education - master's
+previous_qualification,5,Higher education - doctorate
+previous_qualification,6,Frequency of higher education
+previous_qualification,9,12th year of schooling - not completed
+previous_qualification,10,11th year of schooling - not completed
+previous_qualification,12,Other - 11th year of schooling
+previous_qualification,14,10th year of schooling
+previous_qualification,15,10th year of schooling - not completed
+previous_qualification,19,Basic education 3rd cycle (9th/10th/11th year) or equiv.
+previous_qualification,38,Basic education 2nd cycle (6th/7th/8th year) or equiv.
+previous_qualification,39,Technological specialization course
+previous_qualification,40,Higher education - degree (1st cycle)
+previous_qualification,42,Professional higher technical course
+previous_qualification,43,Higher education - master (2nd cycle)
+nationality,1,Portuguese
+nationality,2,German
+nationality,6,Spanish
+nationality,11,Italian
+nationality,13,Dutch
+nationality,14,English
+nationality,17,Lithuanian
+nationality,21,Angolan
+nationality,22,Cape Verdean
+nationality,24,Guinean
+nationality,25,Mozambican
+nationality,26,Santomean
+nationality,32,Turkish
+nationality,41,Brazilian
+nationality,62,Romanian
+nationality,100,Moldova (Republic of)
+nationality,101,Mexican
+nationality,103,Ukrainian
+nationality,105,Russian
+nationality,108,Cuban
+nationality,109,Colombian
+mother_qualification,1,Secondary Education - 12th Year of Schooling or Eq.
+mother_qualification,2,Higher Education - Bachelor's Degree
+mother_qualification,3,Higher Education - Degree
+mother_qualification,4,Higher Education - Master's
+mother_qualification,5,Higher Education - Doctorate
+mother_qualification,6,Frequency of Higher Education
+mother_qualification,9,12th Year of Schooling - Not Completed
+mother_qualification,10,11th Year of Schooling - Not Completed
+mother_qualification,11,7th Year (Old)
+mother_qualification,12,Other - 11th Year of Schooling
+mother_qualification,13,2nd year complementary high school course
+mother_qualification,14,10th Year of Schooling
+mother_qualification,18,General commerce course
+mother_qualification,19,Basic Education 3rd Cycle (9th/10th/11th Year) or Equiv.
+mother_qualification,20,Complementary High School Course
+mother_qualification,22,Technical-professional course
+mother_qualification,25,Complementary High School Course - not concluded
+mother_qualification,26,7th year of schooling
+mother_qualification,27,2nd cycle of the general high school course
+mother_qualification,29,9th Year of Schooling - Not Completed
+mother_qualification,30,8th year of schooling
+mother_qualification,31,General Course of Administration and Commerce
+mother_qualification,33,Supplementary Accounting and Administration
+mother_qualification,34,Unknown
+mother_qualification,35,Can't read or write
+mother_qualification,36,Can read without having a 4th year of schooling
+mother_qualification,37,Basic education 1st cycle (4th/5th year) or equiv.
+mother_qualification,38,Basic Education 2nd Cycle (6th/7th/8th Year) or Equiv.
+mother_qualification,39,Technological specialization course
+mother_qualification,40,Higher education - degree (1st cycle)
+mother_qualification,41,Specialized higher studies course
+mother_qualification,42,Professional higher technical course
+mother_qualification,43,Higher Education - Master (2nd cycle)
+mother_qualification,44,Higher Education - Doctorate (3rd cycle)
+father_qualification,1,Secondary Education - 12th Year of Schooling or Eq.
+father_qualification,2,Higher Education - Bachelor's Degree
+father_qualification,3,Higher Education - Degree
+father_qualification,4,Higher Education - Master's
+father_qualification,5,Higher Education - Doctorate
+father_qualification,6,Frequency of Higher Education
+father_qualification,9,12th Year of Schooling - Not Completed
+father_qualification,10,11th Year of Schooling - Not Completed
+father_qualification,11,7th Year (Old)
+father_qualification,12,Other - 11th Year of Schooling
+father_qualification,13,2nd year complementary high school course
+father_qualification,14,10th Year of Schooling
+father_qualification,18,General commerce course
+father_qualification,19,Basic Education 3rd Cycle (9th/10th/11th Year) or Equiv.
+father_qualification,20,Complementary High School Course
+father_qualification,22,Technical-professional course
+father_qualification,25,Complementary High School Course - not concluded
+father_qualification,26,7th year of schooling
+father_qualification,27,2nd cycle of the general high school course
+father_qualification,29,9th Year of Schooling - Not Completed
+father_qualification,30,8th year of schooling
+father_qualification,31,General Course of Administration and Commerce
+father_qualification,33,Supplementary Accounting and Administration
+father_qualification,34,Unknown
+father_qualification,35,Can't read or write
+father_qualification,36,Can read without having a 4th year of schooling
+father_qualification,37,Basic education 1st cycle (4th/5th year) or equiv.
+father_qualification,38,Basic Education 2nd Cycle (6th/7th/8th Year) or Equiv.
+father_qualification,39,Technological specialization course
+father_qualification,40,Higher education - degree (1st cycle)
+father_qualification,41,Specialized higher studies course
+father_qualification,42,Professional higher technical course
+father_qualification,43,Higher Education - Master (2nd cycle)
+father_qualification,44,Higher Education - Doctorate (3rd cycle)
+mother_occupation,0,Student
+mother_occupation,1,"Representatives of the Legislative Power and Executive Bodies, Directors, Directors and Executive Managers"
+mother_occupation,2,Specialists in Intellectual and Scientific Activities
+mother_occupation,3,Intermediate Level Technicians and Professions
+mother_occupation,4,Administrative staff
+mother_occupation,5,"Personal Services, Security and Safety Workers and Sellers"
+mother_occupation,6,"Farmers and Skilled Workers in Agriculture, Fisheries and Forestry"
+mother_occupation,7,"Skilled Workers in Industry, Construction and Craftsmen"
+mother_occupation,8,Installation and Machine Operators and Assembly Workers
+mother_occupation,9,Unskilled Workers
+mother_occupation,10,Armed Forces Professions
+mother_occupation,90,Other Situation
+mother_occupation,99,(blank)
+mother_occupation,101,Armed Forces Officers
+mother_occupation,102,Armed Forces Sergeants
+mother_occupation,103,Other Armed Forces personnel
+mother_occupation,112,Directors of administrative and commercial services
+mother_occupation,114,"Hotel, catering, trade and other services directors"
+mother_occupation,121,"Specialists in the physical sciences, mathematics, engineering and related techniques"
+mother_occupation,122,Health professionals
+mother_occupation,123,Teachers
+mother_occupation,124,"Specialists in finance, accounting, administrative organization, public and commercial relations"
+mother_occupation,125,Specialists in information and communication technologies (ICT)
+mother_occupation,131,Intermediate level science and engineering technicians and professions
+mother_occupation,132,"Technicians and professionals, of intermediate level of health"
+mother_occupation,134,"Intermediate level technicians from legal, social, sports, cultural and similar services"
+mother_occupation,135,Information and communication technology technicians
+mother_occupation,141,"Office workers, secretaries in general and data processing operators"
+mother_occupation,143,"Data, accounting, statistical, financial services and registry-related operators"
+mother_occupation,144,Other administrative support staff
+mother_occupation,151,Personal service workers
+mother_occupation,152,Sellers
+mother_occupation,153,Personal care workers and the like
+mother_occupation,154,Protection and security services personnel
+mother_occupation,161,Market-oriented farmers and skilled agricultural and animal production workers
+mother_occupation,163,"Farmers, livestock keepers, fishermen, hunters and gatherers, subsistence"
+mother_occupation,171,"Skilled construction workers and the like, except electricians"
+mother_occupation,172,"Skilled workers in metallurgy, metalworking and similar"
+mother_occupation,173,"Skilled workers in printing, precision instrument manufacturing, jewelers, artisans and the like"
+mother_occupation,174,Skilled workers in electricity and electronics
+mother_occupation,175,"Workers in food processing, woodworking, clothing and other industries and crafts"
+mother_occupation,181,Fixed plant and machine operators
+mother_occupation,182,Assembly workers
+mother_occupation,183,Vehicle drivers and mobile equipment operators
+mother_occupation,191,Cleaning workers
+mother_occupation,192,"Unskilled workers in agriculture, animal production, fisheries and forestry"
+mother_occupation,193,"Unskilled workers in extractive industry, construction, manufacturing and transport"
+mother_occupation,194,Meal preparation assistants
+mother_occupation,195,Street vendors (except food) and street service providers
+father_occupation,0,Student
+father_occupation,1,"Representatives of the Legislative Power and Executive Bodies, Directors, Directors and Executive Managers"
+father_occupation,2,Specialists in Intellectual and Scientific Activities
+father_occupation,3,Intermediate Level Technicians and Professions
+father_occupation,4,Administrative staff
+father_occupation,5,"Personal Services, Security and Safety Workers and Sellers"
+father_occupation,6,"Farmers and Skilled Workers in Agriculture, Fisheries and Forestry"
+father_occupation,7,"Skilled Workers in Industry, Construction and Craftsmen"
+father_occupation,8,Installation and Machine Operators and Assembly Workers
+father_occupation,9,Unskilled Workers
+father_occupation,10,Armed Forces Professions
+father_occupation,90,Other Situation
+father_occupation,99,(blank)
+father_occupation,101,Armed Forces Officers
+father_occupation,102,Armed Forces Sergeants
+father_occupation,103,Other Armed Forces personnel
+father_occupation,112,Directors of administrative and commercial services
+father_occupation,114,"Hotel, catering, trade and other services directors"
+father_occupation,121,"Specialists in the physical sciences, mathematics, engineering and related techniques"
+father_occupation,122,Health professionals
+father_occupation,123,Teachers
+father_occupation,124,"Specialists in finance, accounting, administrative organization, public and commercial relations"
+father_occupation,125,Specialists in information and communication technologies (ICT)
+father_occupation,131,Intermediate level science and engineering technicians and professions
+father_occupation,132,"Technicians and professionals, of intermediate level of health"
+father_occupation,134,"Intermediate level technicians from legal, social, sports, cultural and similar services"
+father_occupation,135,Information and communication technology technicians
+father_occupation,141,"Office workers, secretaries in general and data processing operators"
+father_occupation,143,"Data, accounting, statistical, financial services and registry-related operators"
+father_occupation,144,Other administrative support staff
+father_occupation,151,Personal service workers
+father_occupation,152,Sellers
+father_occupation,153,Personal care workers and the like
+father_occupation,154,Protection and security services personnel
+father_occupation,161,Market-oriented farmers and skilled agricultural and animal production workers
+father_occupation,163,"Farmers, livestock keepers, fishermen, hunters and gatherers, subsistence"
+father_occupation,171,"Skilled construction workers and the like, except electricians"
+father_occupation,172,"Skilled workers in metallurgy, metalworking and similar"
+father_occupation,173,"Skilled workers in printing, precision instrument manufacturing, jewelers, artisans and the like"
+father_occupation,174,Skilled workers in electricity and electronics
+father_occupation,175,"Workers in food processing, woodworking, clothing and other industries and crafts"
+father_occupation,181,Fixed plant and machine operators
+father_occupation,182,Assembly workers
+father_occupation,183,Vehicle drivers and mobile equipment operators
+father_occupation,191,Cleaning workers
+father_occupation,192,"Unskilled workers in agriculture, animal production, fisheries and forestry"
+father_occupation,193,"Unskilled workers in extractive industry, construction, manufacturing and transport"
+father_occupation,194,Meal preparation assistants
+father_occupation,195,Street vendors (except food) and street service providers
+daytime_attendance,0,Evening
+daytime_attendance,1,Daytime
+gender,0,Female
+gender,1,Male
+displaced,0,No
+displaced,1,Yes
+special_needs,0,No
+special_needs,1,Yes
+debtor,0,No
+debtor,1,Yes
+tuition_up_to_date,0,No
+tuition_up_to_date,1,Yes
+scholarship_holder,0,No
+scholarship_holder,1,Yes
+international,0,No
+international,1,Yes

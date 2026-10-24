@@ -6,6 +6,7 @@ from pathlib import Path
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 DATA_DIR = PROJECT_ROOT / "data"
 RAW_DATA_PATH = DATA_DIR / "raw" / "data.csv"
+CODEBOOK_PATH = DATA_DIR / "codebook.csv"
 PROCESSED_DIR = DATA_DIR / "processed"
 FIGURES_DIR = PROJECT_ROOT / "results" / "figures"
 

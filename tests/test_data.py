@@ -1,7 +1,7 @@
 """Sanity checks on the raw dataset. Run with:  pytest"""
 
 from dropout import config
-from dropout.data import file_sha256, load_data
+from dropout.data import decode, file_sha256, load_codebook, load_data
 
 
 def test_raw_file_unchanged():
@@ -30,3 +30,16 @@ def test_stage_feature_groups():
     assert len(config.SEM2_FEATURES) == 6
     assert len(config.STAGES["semester_2"]) == 36
     assert set(config.CATEGORICAL_FEATURES) <= set(config.ENROLLMENT_FEATURES)
+
+
+def test_codebook_covers_every_code():
+    df = load_data()
+    codebook = load_codebook()
+    for variable, rows in codebook.groupby("variable"):
+        missing = set(df[variable].unique()) - set(rows["code"])
+        assert not missing, f"{variable} has codes with no meaning: {missing}"
+
+
+def test_decode():
+    decoded = decode(load_data().head(2), ["course"])
+    assert list(decoded["course"]) == ["Animation and Multimedia Design", "Tourism"]

@@ -60,3 +60,23 @@ def load_data(path: Path | str = config.RAW_DATA_PATH, check: bool = True) -> pd
     if check:
         validate(df)
     return df
+
+
+def load_codebook(path: Path | str = config.CODEBOOK_PATH) -> pd.DataFrame:
+    """Load the code -> meaning table (columns: variable, code, meaning)."""
+    return pd.read_csv(path)
+
+
+def decode(df: pd.DataFrame, columns: list[str] | None = None) -> pd.DataFrame:
+    """Return a copy of ``df`` with coded columns replaced by readable labels.
+
+    Use this for tables and plots only. Models should keep the numeric codes
+    and one-hot encode them.
+    """
+    codebook = load_codebook()
+    columns = columns or sorted(set(codebook["variable"]) & set(df.columns))
+    out = df.copy()
+    for col in columns:
+        mapping = codebook[codebook["variable"] == col].set_index("code")["meaning"]
+        out[col] = out[col].map(mapping)
+    return out
