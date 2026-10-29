@@ -28,9 +28,12 @@ This project uses the UCI [Predict Students' Dropout and Academic Success](https
 │   ├── raw/              # original dataset, never modified
 │   └── processed/        # generated files (git-ignored)
 ├── notebooks/            # numbered analysis notebooks
-├── src/dropout/          # reusable code: config, data loading, features, plotting
-├── tests/                # data sanity checks
-├── results/figures/      # saved plots
+├── src/dropout/          # reusable code: config, data, features, modeling, plotting
+├── scripts/              # experiment runners
+├── tests/                # data, feature and modeling checks
+├── results/
+│   ├── figures/          # saved plots
+│   └── tables/           # experiment results (CSV)
 ├── reports/              # write-ups and meeting summaries
 ├── requirements.txt
 └── pyproject.toml
@@ -47,8 +50,9 @@ source .venv/bin/activate        # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 pip install -e .                 # makes `import dropout` work everywhere
 
-pytest                           # checks the data loads as expected
-jupyter lab                      # then open notebooks/01_load_and_check.ipynb
+pytest                           # data, feature and modeling checks
+python scripts/run_baselines.py  # baseline experiments, ~5 min -> results/tables/
+jupyter lab                      # notebooks/01 → 03
 ```
 
 Quick check from Python:
@@ -65,15 +69,17 @@ df.shape   # (4424, 37): 36 features + target
 - [x] Codebook for categorical codes (`data/codebook.csv`)
 - [x] Exploratory data analysis (`02_eda.ipynb`, figures in `results/figures/`)
 - [x] Trajectory feature engineering (`src/dropout/features.py`)
-- [ ] Staged models: enrollment → semester 1 → semester 2
-- [ ] Classical vs. neural model comparison
-- [ ] Still-passing subgroup analysis and feature importance
+- [x] Baseline staged models: enrollment → semester 1 → semester 2 (`03_baseline_models.ipynb`)
+- [ ] Hyperparameter tuning (nested CV)
+- [ ] Neural network vs. classical models
+- [ ] Feature importance and still-passing subgroup follow-up
 
 ## References
 
 1. M. V. Martins, D. Tolledo, J. Machado, L. M. T. Baptista, and V. Realinho, "Early Prediction of Student's Performance in Higher Education: A Case Study," *WorldCIST 2021*, AISC vol. 1365, Springer, 2021, pp. 166–175.
 2. V. Realinho, M. Vieira Martins, J. Machado, and L. Baptista, "Predict Students' Dropout and Academic Success" [Dataset], UCI Machine Learning Repository, 2021. https://doi.org/10.24432/C5MC89
-3. S. Pandey and J. Srivastava, "RKT: Relation-Aware Self-Attention for Knowledge Tracing," *CIKM 2020*, pp. 1205–1214.
+3. M. V. Martins, L. Baptista, J. Machado, and V. Realinho, "Multi-Class Phased Prediction of Academic Performance and Dropout in Higher Education," *Applied Sciences* 13(8):4702, 2023. https://doi.org/10.3390/app13084702
+4. S. Pandey and J. Srivastava, "RKT: Relation-Aware Self-Attention for Knowledge Tracing," *CIKM 2020*, pp. 1205–1214.
 
 ## License
 

@@ -55,3 +55,11 @@ def save(fig, name: str) -> None:
     """Save a figure to results/figures/<name>.png."""
     config.FIGURES_DIR.mkdir(parents=True, exist_ok=True)
     fig.savefig(config.FIGURES_DIR / f"{name}.png", bbox_inches="tight")
+
+
+# One fixed color and marker per model (validated as a set; labels are drawn on the lines).
+MODEL_STYLE = {
+    "logreg": {"color": "#6250d6", "marker": "o", "label": "Logistic regression"},
+    "random_forest": {"color": "#eda100", "marker": "s", "label": "Random forest"},
+    "gboost": {"color": "#e87ba4", "marker": "^", "label": "Gradient boosting"},
+}
