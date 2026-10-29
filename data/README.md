@@ -48,7 +48,7 @@ Gaps and exceptions found during exploration (`notebooks/02_eda.ipynb`). Each on
 2. **Enrolled students have no final outcome.** Models use Dropout vs. Graduate only (n = 3,630).
 3. **A semester grade of 0 means no unit was passed,** not an average of 0. It is treated as missing.
 4. **Missing semester records for 180 students.** Every semester column is 0 in both semesters, including credited units, yet 75 of these students graduated. All 180 are in course 171 (Animation and Multimedia Design, 180 of its 215 students). They are kept at the enrollment stage and removed from the semester stages (`dropout.data.semester_records_missing`).
-5. **Tuition and debtor status: timing unknown.** Neither variable is defined by the authors, and neither paper states when they were recorded. Martins et al. (2023) place them at enrollment. They are the strongest enrollment-stage signals, so the enrollment stage is reported with and without them.
+5. **Tuition and debtor status: timing unknown.** Neither variable is defined by the authors, and no paper states when they were recorded. Martins et al. (2023) place both at enrollment. The earlier, enrollment-only version of the data (Martins et al., 2021) lists student debt among variables observable before registration but does not include tuition status, which first appears in the public dataset. They are the strongest enrollment-stage signals, so every stage is reported with and without them.
 6. **Debtor and tuition status are different variables.** They overlap (246 students are both), but 282 students are behind on tuition without being debtors, and 257 debtors are up to date on tuition.
 7. **Evaluations include retakes,** so evaluations per enrolled unit can exceed 1. It is not an attendance measure.
 8. **Code numbering differs between sources.** The appendix of the 2022 data paper numbers categories 1, 2, 3, …; the CSV uses the original UCI codes. See [Codebook](#codebook).
@@ -61,5 +61,6 @@ Gaps and exceptions found during exploration (`notebooks/02_eda.ipynb`). Each on
 
 ## References
 
+- Martins, M. V., Tolledo, D., Machado, J., Baptista, L. M. T., and Realinho, V. "Early Prediction of Student's Performance in Higher Education: A Case Study." *WorldCIST 2021*, AISC 1365, pp. 166–175. https://doi.org/10.1007/978-3-030-72657-7_16
 - Realinho, V., Machado, J., Baptista, L., and Martins, M. V. "Predicting Student Dropout and Academic Success." *Data* 7(11):146, 2022. https://www.mdpi.com/2306-5729/7/11/146
 - Martins, M. V., Baptista, L., Machado, J., and Realinho, V. "Multi-Class Phased Prediction of Academic Performance and Dropout in Higher Education." *Applied Sciences* 13(8):4702, 2023. https://www.mdpi.com/2076-3417/13/8/4702
