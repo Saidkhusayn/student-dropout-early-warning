@@ -80,3 +80,26 @@ def decode(df: pd.DataFrame, columns: list[str] | None = None) -> pd.DataFrame:
         mapping = codebook[codebook["variable"] == col].set_index("code")["meaning"]
         out[col] = out[col].map(mapping)
     return out
+
+
+def semester_records_missing(df: pd.DataFrame) -> pd.Series:
+    """True for students with no semester data at all.
+
+    180 students (all in course 171, Animation and Multimedia Design) have every
+    semester column equal to 0 in both semesters, including credited units, yet
+    75 of them graduated. These are missing records, not students who took no classes.
+    """
+    cols = config.SEM1_FEATURES + config.SEM2_FEATURES
+    return (df[cols] == 0).all(axis=1)
+
+
+def modeling_sample(df: pd.DataFrame, stage: str) -> pd.DataFrame:
+    """Rows used to train and evaluate models at ``stage``.
+
+    Keeps Dropout and Graduate only. At the semester stages, students with
+    missing semester records are also removed.
+    """
+    keep = df[config.TARGET].isin(config.MODEL_CLASSES)
+    if stage != "enrollment":
+        keep &= ~semester_records_missing(df)
+    return df[keep]

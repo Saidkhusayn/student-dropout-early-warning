@@ -65,6 +65,14 @@ COLUMN_RENAMES = {
 TARGET = "target"
 TARGET_CLASSES = ("Dropout", "Enrolled", "Graduate")
 
+# Models predict Dropout vs. Graduate. "Enrolled" students have no final outcome yet.
+MODEL_CLASSES = ("Dropout", "Graduate")
+POSITIVE_CLASS = "Dropout"
+
+# Strong signals whose recording date is not stated by the dataset authors.
+# The enrollment stage is reported with and without them (possible leakage).
+TIMING_UNCLEAR_FEATURES = ["debtor", "tuition_up_to_date"]
+
 # Integer codes that stand for categories, not quantities -> one-hot encode.
 CATEGORICAL_FEATURES = [
     "marital_status",

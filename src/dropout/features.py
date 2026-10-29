@@ -3,14 +3,17 @@
 Every feature here uses only information available at its stage, so a
 semester-1 feature never looks at semester-2 data.
 
-Undefined values are left as NaN on purpose (e.g. pass rate for a student
-enrolled in 0 units). The modeling pipeline decides how to fill them; tree
-models such as XGBoost can use NaN directly.
+Naming: "_vs_entry" compares a semester grade with the student's entry grade;
+"_change_s1_s2" is the change from semester 1 to semester 2 (positive = improving).
+
+Undefined values are left as NaN (e.g. a grade when no unit was passed). The
+modeling pipeline decides how to fill them; XGBoost can use NaN directly.
+Students whose semester records are missing are removed before semester-stage
+modeling (see ``dropout.data.semester_records_missing``).
 """
 
 from __future__ import annotations
 
-import numpy as np
 import pandas as pd
 
 # Admission grade is on a 0-200 scale; semester grades are on 0-20.
@@ -33,13 +36,12 @@ def semester_features(df: pd.DataFrame, sem: int) -> pd.DataFrame:
 
     return pd.DataFrame(
         {
-            p + "no_units": (enrolled == 0).astype(int),
             p + "passed_none": ((enrolled > 0) & (approved == 0)).astype(int),
             p + "passed_all": ((enrolled > 0) & (approved == enrolled)).astype(int),
             p + "pass_rate": _safe_ratio(approved, enrolled),
             p + "eval_rate": _safe_ratio(df[p + "evaluations"], enrolled),
             p + "grade_real": real_grade,
-            p + "grade_gap": real_grade - df["admission_grade"] / ADMISSION_TO_GRADE_SCALE,
+            p + "grade_vs_entry": real_grade - df["admission_grade"] / ADMISSION_TO_GRADE_SCALE,
         },
         index=df.index,
     )
@@ -49,8 +51,8 @@ def change_features(sem1: pd.DataFrame, sem2: pd.DataFrame) -> pd.DataFrame:
     """Semester 1 -> semester 2 changes (positive = improving)."""
     return pd.DataFrame(
         {
-            "grade_change": sem2["sem2_grade_real"] - sem1["sem1_grade_real"],
-            "pass_rate_change": sem2["sem2_pass_rate"] - sem1["sem1_pass_rate"],
+            "grade_change_s1_s2": sem2["sem2_grade_real"] - sem1["sem1_grade_real"],
+            "pass_rate_change_s1_s2": sem2["sem2_pass_rate"] - sem1["sem1_pass_rate"],
         },
         index=sem1.index,
     )
@@ -64,11 +66,11 @@ def add_trajectory_features(df: pd.DataFrame) -> pd.DataFrame:
 
 
 SEM1_TRAJECTORY = [
-    "sem1_no_units", "sem1_passed_none", "sem1_passed_all",
-    "sem1_pass_rate", "sem1_eval_rate", "sem1_grade_real", "sem1_grade_gap",
+    "sem1_passed_none", "sem1_passed_all", "sem1_pass_rate",
+    "sem1_eval_rate", "sem1_grade_real", "sem1_grade_vs_entry",
 ]
 SEM2_TRAJECTORY = [c.replace("sem1_", "sem2_") for c in SEM1_TRAJECTORY]
-CHANGE_TRAJECTORY = ["grade_change", "pass_rate_change"]
+CHANGE_TRAJECTORY = ["grade_change_s1_s2", "pass_rate_change_s1_s2"]
 
 # New features available at each modeling stage (on top of config.STAGES).
 TRAJECTORY_BY_STAGE = {
